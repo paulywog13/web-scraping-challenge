@@ -13,13 +13,16 @@
   <div class="container-fluid">
     <div class="jumbotron text-center">
       <h1>Mission to Mars</h1>
-      <p>Finding the latest information as we explore the universe.</p>
+      <p>Finding the latest information on Mars as we explore the universe.</p>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape for New Data</a></p>
     </div>
-    <img src="{{ vacation.sloth_img }}" alt="Sloth">
-    <h2>The typical weather in Costa Rica is:</h2>
-    <h3>Max Temp: {{ vacation.max_temp }}</h3>
-    <h3>Min Temp: {{ vacation.min_temp }}</h3>
+    <h4>Latest Mars News</h4>
+    <h5>{{ mars_mission.latest_title }}</h5>
+    <h6>{{ mars_mission.latest_teaser }}</h6>
+    <h3>Featured Mars Image</h3>
+    <img src="{{ mars_mission.featured_image }}" alt="Featured Mars Image">
+    <h2>{{ mars_mission.mars_info }}</h2>
+    
   </div>
   </div>
 </body>

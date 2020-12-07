@@ -24,7 +24,6 @@ def scrape_info():
     latest_item = soup.select_one('ul.item_list li.slide')
     latest_title=latest_item.find('div',class_='content_title').get_text()
     latest_teaser=latest_item.find('div',class_='article_teaser_body').get_text()
-
     
     # Store data in a dictionary
     article_data = {

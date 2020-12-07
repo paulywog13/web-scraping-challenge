@@ -16,10 +16,6 @@ def scrape_info():
     url = 'https://space-facts.com/mars/'
     browser.visit(url)
 
-    # Scrape page into Soup
-    html = browser.html
-    soup = bs(html, "html.parser")
-
     # Get the facts about Mars and put them in an html table
     mars_facts_df= pd.read_html(url)
     mars_facts_only = mars_facts_df[0]
@@ -28,5 +24,5 @@ def scrape_info():
 
     browser.quit()
 
-    return mars_facts__html_table
+    return mars_facts_html
 

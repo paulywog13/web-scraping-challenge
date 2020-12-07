@@ -28,19 +28,19 @@ def scrape_info():
     # Use a Python dictionary to store the data using the keys: img_url and title.
 
     hemisphere_image_urls=[]
-    for hemi in cerb_desc:
-    title=hemi.find('h3').text
-    image=hemi.find('a', class_='itemLink product-item')["href"]
-    final_url='https://astrogeology.usgs.gov'+image
-    browser.visit(final_url)
-    html=browser.html
-    soup=bs(html, 'html.parser')
-    full_image_url='https://astrogeology.usgs.gov'+soup.find("img", class_="wide-image")['src']
-    hemisphere_image_urls.append({"title":title, 
+    for hemi in hemisphere_descriptions:
+        title=hemi.find('h3').text
+        image=hemi.find('a', class_='itemLink product-item')["href"]
+        final_url='https://astrogeology.usgs.gov'+image
+        browser.visit(final_url)
+        html=browser.html
+        soup=bs(html, 'html.parser')
+        full_image_url='https://astrogeology.usgs.gov'+soup.find("img", class_="wide-image")['src']
+        hemisphere_image_urls.append({"title":title, 
                       "image_url":full_image_url})
     
 
     browser.quit()
 
-    return hemispheres_data
+    return hemisphere_image_urls
 

@@ -39,4 +39,4 @@ def scrape_info():
 
     browser.quit()
 
-    return featured_mars_image
+    return featured_image
