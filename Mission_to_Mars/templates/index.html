@@ -12,7 +12,7 @@
 <body>
   <div class="container-fluid">
     <div class="jumbotron text-center">
-      <h1>Mission to Mars</h1>
+      <h1 >Mission to Mars</h1>
       <p>Finding the latest information on Mars as we explore the universe.</p>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape for New Data</a></p>
     </div>
@@ -30,12 +30,21 @@
           <h3>Mars Facts</h3>
           <h2>{{ mars_mission.mars_facts | safe }}</h2>
           </div>
-          <h3 align= "center">Mars Hemispheres</h3>
-          <div class ="container">
+          <h2 align="center">Mars Hemispheres</h2>
+          <!-- <div class ="container"> -->
             <div class="row">  
-              <div class ="col-md-6">
-                      
-  </div>  
+              <!-- <div class ="col-md-12"> -->
+                <ul id="mars_mission.mars_hemispheres" >
+                  {% for image in mars_mission.mars_hemispheres %}
+                    <div class = "col-md-6">
+                    <figure><img src="{{ image.image_url }}" height=500></figure>
+                    <figcaption>{{ image.title }}</figcaption>
+                    </div>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>             
+          </div>  
 </body>
 
 </html>
