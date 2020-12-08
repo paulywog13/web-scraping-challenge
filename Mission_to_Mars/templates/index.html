@@ -16,15 +16,26 @@
       <p>Finding the latest information on Mars as we explore the universe.</p>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape for New Data</a></p>
     </div>
-    <h4>Latest Mars News</h4>
-    <h5>{{ mars_mission.latest_title }}</h5>
-    <h6>{{ mars_mission.latest_teaser }}</h6>
-    <h3>Featured Mars Image</h3>
-    <img src="{{ mars_mission.featured_image }}" alt="Featured Mars Image">
-    <h2>{{ mars_mission.mars_info }}</h2>
-    
-  </div>
-  </div>
+    <h3>Latest Mars News</h3>
+    <h4>{{ mars_mission.news_title }}</h4>
+    <h5>{{ mars_mission.new_teaser }}</h5>
+    <div class ="container">
+      <div class="row">  
+        <div class ="col-md-7">
+          <h3>Featured Mars Image</h3>
+          <img src="{{ mars_mission.featured_image }}" alt="Featured Mars Image" align="left" height = 625px>
+          </div>
+          <div>
+            <div class ="col-md-5"> 
+          <h3>Mars Facts</h3>
+          <h2>{{ mars_mission.mars_facts | safe }}</h2>
+          </div>
+          <h3 align= "center">Mars Hemispheres</h3>
+          <div class ="container">
+            <div class="row">  
+              <div class ="col-md-6">
+                      
+  </div>  
 </body>
 
 </html>
